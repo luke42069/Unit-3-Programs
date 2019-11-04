@@ -58,7 +58,7 @@ public class Rect extends Shape{
         String str = "Rectangle\n======\n";
         str += super.toString();
         str+= "\nWidth: "+width+" Height: "+height;
-        str +="\nPerimeter: "+perimeter();
+        str+= String.format("\nPerimeter: %.2f",perimeter());
         return str;
     }
     

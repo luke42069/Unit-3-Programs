@@ -60,7 +60,7 @@ public class Circle extends Shape{
         String str = "Circle\n======\n";
         str += "\n" + super.toString();
         str+= "\nRadius: "+radius;
-        str+= "\nCircumference: "+perimeter();
+        str+= String.format("\nCircumference: %.2f",perimeter());
         return str;
     }
     

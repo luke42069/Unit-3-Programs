@@ -90,6 +90,11 @@ public class ShapesGUI extends javax.swing.JFrame {
 
         btntri.setText("Triangle");
         btntri.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btntri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntriActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -268,12 +273,21 @@ public class ShapesGUI extends javax.swing.JFrame {
         erase();
         s.stretchBy(factor);
         s.draw(p);
+        text.setText(s.toString());
     }//GEN-LAST:event_btnresizeActionPerformed
 
     private void btnquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnquitActionPerformed
+
+    private void btntriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntriActionPerformed
+        // TODO add your handling code here:
+        erase();
+        s = new Triangle(0,0,50,100,100,0);
+        s.draw(p);
+        text.setText(s.toString());
+    }//GEN-LAST:event_btntriActionPerformed
 
     /**
      * @param args the command line arguments

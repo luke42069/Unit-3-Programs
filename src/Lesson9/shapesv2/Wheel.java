@@ -54,6 +54,7 @@ public class Wheel extends Circle{
         str+= "\nRadius: "+radius;
         str+= "\nSpokes: "+spokes;
         str += String.format("\nArea: %.2f",area());
+        str+= String.format("\nCircumference: %.2f",perimeter());
         return str;
     }
     

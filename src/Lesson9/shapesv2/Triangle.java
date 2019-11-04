@@ -43,7 +43,7 @@ public class Triangle extends Shape {
         String str = "Triangle\n======\n";
         str += super.toString();
         str += String.format("\nSide Lengths: %.2f by %.2f by %.2f", length, length, length);
-        str+="\nPerimeter: "+perimeter();
+        str+= String.format("\nPerimeter: %.2f",perimeter());
         return str;
     }
     
