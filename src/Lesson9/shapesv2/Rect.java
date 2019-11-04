@@ -26,6 +26,10 @@ public class Rect extends Shape{
     public double area() {
         return width*height;
     }
+    
+    public double perimeter(){
+        return width*2 + height*2;
+    }
 
     
     public void draw(Pen p) {
@@ -52,9 +56,9 @@ public class Rect extends Shape{
     
     public String toString(){
         String str = "Rectangle\n======\n";
-        
-        str+= "\nWidth: "+width+" Height: "+height;
         str += super.toString();
+        str+= "\nWidth: "+width+" Height: "+height;
+        str +="\nPerimeter: "+perimeter();
         return str;
     }
     

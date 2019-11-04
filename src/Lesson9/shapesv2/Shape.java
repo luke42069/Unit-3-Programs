@@ -18,9 +18,10 @@ public abstract class Shape {
        yPos = 0;
    }
    
-   abstract double area();
-   abstract void draw(Pen p);
-   abstract void stretchBy(double factor);
+   abstract public double area();
+   abstract public void draw(Pen p);
+   abstract public void stretchBy(double factor);
+   abstract public double perimeter();
    
    //final methods can never be overridden by child classes
    final public double getXPos(){
@@ -29,11 +30,7 @@ public abstract class Shape {
    final public double getYPos(){
        return yPos;
    }
-   public void erase(Pen p){
-        p.setColor(Color.white);
-        draw(p);
-        p.setColor(Color.blue);
-    }
+   
    
    public void move(double xLoc, double yLoc){
        xPos=xLoc;yPos=yLoc;
@@ -41,7 +38,7 @@ public abstract class Shape {
    
    public String toString(){
        String str = "XPos: "+xPos+" YPos: "+yPos;
-       str += String.format("\nArea: %.2f\n", area());
+       str += String.format("\nArea: %.2f", area());
        return str;
    }
 }

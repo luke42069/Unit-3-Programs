@@ -27,6 +27,9 @@ public class Circle extends Shape{
         return Math.PI * radius*radius;
     }
 
+    public double perimeter(){
+        return Math.PI * 2 * radius;
+    }
     
     public void draw(Pen p) {
         double side = (2*Math.PI*radius)/120;
@@ -55,9 +58,9 @@ public class Circle extends Shape{
     
     public String toString(){
         String str = "Circle\n======\n";
-        str +="Xpos: "+xPos+" Ypos: "+yPos;
+        str += "\n" + super.toString();
         str+= "\nRadius: "+radius;
-        str += String.format("\nArea: %.2f",area());
+        str+= "\nCircumference: "+perimeter();
         return str;
     }
     

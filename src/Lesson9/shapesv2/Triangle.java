@@ -1,5 +1,5 @@
 
-package Lesson9.shapesV2;
+package Lesson9.shapesv2;
 
 import TurtleGraphics.Pen;
 
@@ -16,7 +16,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    double area() {
+    public double area() {
         return Math.abs((xPos * y2 - x2 * yPos) + (x2 * y3 - x3 * y2) + (x3 * yPos - xPos * y3)) / 2;
     }
 
@@ -41,8 +41,9 @@ public class Triangle extends Shape {
     public String toString() {
         double length = x2 - xPos;
         String str = "Triangle\n======\n";
-        str += String.format("\nLengths: %.2fm by %.2fm by %.2fm", length, length, length);
         str += super.toString();
+        str += String.format("\nSide Lengths: %.2f by %.2f by %.2f", length, length, length);
+        str+="\nPerimeter: "+perimeter();
         return str;
     }
     

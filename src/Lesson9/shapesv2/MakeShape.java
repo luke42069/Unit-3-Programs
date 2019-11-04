@@ -50,13 +50,13 @@ public class MakeShape {
        Scanner scan = new Scanner(System.in);
         System.out.print("Press any key to mak it cirle");
         scan.nextLine();
-        actual.erase(p);
+       // actual.erase(p);
         actual = makeShapeFromAnother(actual,'c');
         actual.draw(p);
         
         System.out.print("\nPress any key to mak it wheel");
         scan.nextLine();
-        actual.erase(p);
+       // actual.erase(p);
         actual = makeShapeFromAnother(actual,'w');
         actual.draw(p);
     }
