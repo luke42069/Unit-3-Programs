@@ -53,6 +53,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         btnmove = new javax.swing.JButton();
         btnresize = new javax.swing.JButton();
         btnquit = new javax.swing.JButton();
+        btnspokes = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         text = new javax.swing.JTextArea();
@@ -153,6 +154,14 @@ public class ShapesGUI extends javax.swing.JFrame {
             }
         });
 
+        btnspokes.setText("Spokes");
+        btnspokes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnspokes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnspokesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -160,21 +169,24 @@ public class ShapesGUI extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnresize, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(btnresize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnmove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnquit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnquit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnspokes, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(btnmove)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnresize)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnquit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnspokes)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -206,7 +218,7 @@ public class ShapesGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
+                                .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
@@ -223,10 +235,10 @@ public class ShapesGUI extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -238,6 +250,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         s = new Circle(0,0,50);
         s.draw(p);
         text.setText(s.toString());
+        btnspokes.setVisible(false);
     }//GEN-LAST:event_btncircActionPerformed
 
     private void btnmoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoveActionPerformed
@@ -256,6 +269,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         s = new Wheel(0,0,50,6);
         s.draw(p);
         text.setText(s.toString());
+        btnspokes.setVisible(true);
     }//GEN-LAST:event_btnwheelActionPerformed
 
     private void btnrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrectActionPerformed
@@ -264,6 +278,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         s = new Rect(0,0,100,50);
         s.draw(p);
         text.setText(s.toString());
+        btnspokes.setVisible(false);
     }//GEN-LAST:event_btnrectActionPerformed
 
     private void btnresizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresizeActionPerformed
@@ -287,7 +302,14 @@ public class ShapesGUI extends javax.swing.JFrame {
         s = new Triangle(0,0,50,100,100,0);
         s.draw(p);
         text.setText(s.toString());
+        btnspokes.setVisible(false);
     }//GEN-LAST:event_btntriActionPerformed
+
+    private void btnspokesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnspokesActionPerformed
+        // TODO add your handling code here:
+        int spokes = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter number of spokes: ","6"));
+        //s.setSpokes(spokes);
+    }//GEN-LAST:event_btnspokesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,6 +352,7 @@ public class ShapesGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnquit;
     private javax.swing.JButton btnrect;
     private javax.swing.JButton btnresize;
+    private javax.swing.JButton btnspokes;
     private javax.swing.JButton btntri;
     private javax.swing.JButton btnwheel;
     private javax.swing.JLabel jLabel1;
