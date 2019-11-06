@@ -17,21 +17,21 @@ public abstract class Employee {
             return totalpay;
         }
         
-	public final String getNameRules() {
+	public final static String getNameRules() {
 	 	return "nonblank";
 	}
 
-	public final String getTypeRules() {
+	public final static String getTypeRules() {
 		return "1 or 2";
 	}
 
 
-	public final String getRateRules() {
+	public final static String getRateRules() {
 		return "between 6.75 and 30.50, inclusive";
 	}
 
 	
-	public final String getHoursRules() {
+	public final static String getHoursRules() {
 		return "between 1 and 60, inclusive";
 	}
 
